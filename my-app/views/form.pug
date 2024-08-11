@@ -1,0 +1,47 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Formulario de Registro
+    link(href="/css/cssperron.css" rel="stylesheet")
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+    script(src="/js/script.js")
+  body
+    .container
+      h2.mt-5 Registro a Carrera
+      form#reg_Form(action="/api/form", method="POST", enctype="multipart/form-data")
+        .form-group
+          p Numero de cuenta para pagar: 1452 1458 9856 2654 1458
+        .form-group
+          label(for="p_nombre") Nombre:
+          input.form-control(type="text", id="p_nombre", name="p_nombre", required)
+        .form-group
+          label(for="p_apellido_paterno") Apellido Paterno:
+          input.form-control(type="text", id="p_apellido_paterno", name="p_apellido_paterno", required)
+        .form-group
+          label(for="p_apellido_materno") Apellido Materno:
+          input.form-control(type="text", id="p_apellido_materno", name="p_apellido_materno", required)
+        .form-group
+          label(for="p_telefono") Teléfono:
+          input.form-control(type="tel", id="p_telefono", name="p_telefono")
+        .form-group
+          label(for="p_correo") Correo:
+          input.form-control(type="email", id="p_correo", name="p_correo", required)
+        .form-group
+          label(for="p_direccion") Ciudad:
+          input.form-control(type="text", id="p_direccion", name="p_direccion")
+        .form-group
+          label(for="p_carrera") Tipo de Carrera (Corta, Intermedia o Larga):
+          input.form-control(type="text", id="p_carrera", name="p_carrera", required)
+        .form-group
+          label(for="p_comprobante_pago") Suba tu comprobante de pago (PDF):
+          input.form-control-file(type="file", id="p_comprobante_pago", name="p_comprobante_pago", accept=".pdf", required)
+        .form-group
+          label(for="p_fecha_registro") Fecha de Registro:
+          input.form-control(type="date", id="p_fecha_registro", name="p_fecha_registro", required)
+        .form-group.text-center
+          button.btn-primary(type="submit") Enviar Registro
+          a.btn-regresar(href="/kits") Regresar
+
+    #message-alert(style="display:none;")
+      | Registro exitoso
